@@ -30,23 +30,11 @@ export default class responderProject extends Component {
   componentWillMount(){
     this._panResponder = PanResponder.create({
 
-      /*onStartShouldSetPanResponder: (e, gestureState) => {
-        return true;
-        //alert(JSON.stringify(gestureState))
-      },
-
-      onMoveShouldSetPanResponder: (e, gestureState) => {
-        return true;
-      },*/
-
       onMoveShouldSetResponderCapture: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
 
       onPanResponderGrant: (e, gestureState) => {
-        alert(JSON.stringify(this.state.pan.x))
         this.state.pan.setOffset({x:this.state.pan.x._value, y:this.state.pan.y._value})
-        //this.state.pan.setValue({x: 0, y: 0});
-        //alert(JSON.stringify(this.state.pan))
       },
 
       onPanResponderRelease: (e, gestureState) => {
@@ -81,7 +69,6 @@ export default class responderProject extends Component {
     return (
       <View style={{flex:1}}>
         <ScrollView
-        //bounces={false}
           scrollEventThrottle={15}
           onScroll={Animated.event(
             [{nativeEvent: {contentOffset: {y: this.state.height}}}]
