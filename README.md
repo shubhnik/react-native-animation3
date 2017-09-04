@@ -2,4 +2,4 @@
 
 Animated header on scrollView.
 
-![Demo] ( images/animated_header.gif)
+![Demo](images/animated_header.gif)
